@@ -4,25 +4,26 @@ const statesController = require('../../controllers/statesController');
 const registerController = require('../../controllers/registerController');
 
 router.route('/')
-    .get(statesController.getAllStates)
+    .get(statesController.getAllStates);
     
 
-router.route('/:code')
-    .get(statesController.getState)
+router.route('/:state')
+    .get(statesController.getState);
 
-router.route('/:code/capital')
+router.route('/:state/capital')
     .get(statesController.getCapital);
 
-router.route('/:code/nickname')
+router.route('/:state/nickname')
     .get(statesController.getNickName);
 
-router.route('/:code/population')
+router.route('/:state/population')
     .get(statesController.getPopulation);
     
-router.route('/:code/admission')
+router.route('/:state/admission')
     .get(statesController.getAdmission);
 
 router.route('/:state/funfact')
+    .get(statesController.getFact)
     .patch(statesController.updateState)
     .post(registerController.createNewState)
     .delete(statesController.deleteState);
